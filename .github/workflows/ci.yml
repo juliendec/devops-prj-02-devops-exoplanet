@@ -1,9 +1,8 @@
-name: Projet 2 Exoplanet DevOps
+name: devops-prj-02-devops-exoplanet
 
-on:
-  pull_request:
-    branches: [main]
-  workflow_dispatch:
+on: [push]
+  #pull_request:
+  #  branches: [main]
 
 jobs:
   install:
