@@ -1,51 +1,19 @@
 name: devops-prj-02-devops-exoplanet
 
-on: [push]
-  #pull_request:
-  #  branches: [main]
+on:
+  [push]
+    #pull_request:
+        #branches: [main]
 
 jobs:
-  install:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3.2.0
-      - uses: actions/setup-node@v3.5.1
-        with:
-          node-version: 16.14
-          cache: "npm"
-      - run: npm ci
-
-  code_quality:
-    runs-on: ubuntu-latest
-    needs: [install]
-    steps:
-      - uses: actions/checkout@v3.2.0
-      - uses: actions/setup-node@v3.5.1
-        with:
-          node-version: 16.14
-          cache: "npm"
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run prettier
-  test:
-    runs-on: ubuntu-latest
-    needs: [install]
-    steps:
-      - uses: actions/checkout@v3.2.0
-      - uses: actions/setup-node@v3.5.1
-        with:
-          node-version: 16.14
-          cache: "npm"
-      - run: npm ci
-      - run: npm test
-  build:
-    runs-on: ubuntu-latest
-    needs: [code_quality, test]
-    steps:
-      - uses: actions/checkout@v3.2.0
-      - uses: actions/setup-node@v3.5.1
-        with:
-          node-version: 16.14
-          cache: "npm"
-      - run: npm ci
-      - run: npm run build
+    check_code:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2.6.0
+            - uses: actions/setup-node@v3.5.1
+              with:
+                  node-version: 16.14
+            - run: npm ci
+            - run: npm run lint
+            - run: npm run prettier
+            - run: npm test
