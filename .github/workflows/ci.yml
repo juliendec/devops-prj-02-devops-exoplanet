@@ -6,7 +6,7 @@ on:
         #branches: [main]
 
 jobs:
-    check_code:
+    code_fix:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2.6.0
@@ -16,4 +16,4 @@ jobs:
             - run: npm ci
             - run: npm run lint
             - run: npm run prettier:fix
-            - run: npm test
+            - run: npm run test
