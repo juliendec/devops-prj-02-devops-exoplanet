@@ -3,7 +3,7 @@ const { save } = require("../Exoplanet");
 describe("tests add planets - save", () => {
     it("should work - return true", () => {
         const result = save({
-            uniqueName: "test1",
+            uniqueName: "TEST",
             hClass: "Mésoplanète",
             discoveryYear: 2022,
         })
