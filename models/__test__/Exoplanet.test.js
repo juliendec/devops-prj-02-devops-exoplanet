@@ -1,6 +1,6 @@
 const { save } = require("../Exoplanet");
 
-describe("tests add planets - save", () => {
+describe("Test if planet name is uppercase - pass", () => {
     it("should work - return true", () => {
         const result = save({
             uniqueName: "TEST",
@@ -11,7 +11,7 @@ describe("tests add planets - save", () => {
     });
 });
 
-describe("tests add planets - save", () => {
+describe("Test if planet name is uppercase - fail", () => {
     it("should not work - return false", () => {
         const result = save({
             uniqueName: "lowercase",
@@ -22,7 +22,7 @@ describe("tests add planets - save", () => {
     });
 });
 
-describe("tests add planets - save", () => {
+describe("Test if planet name contains special chars - pass", () => {
     it("should work - return true", () => {
         const result = save({
             uniqueName: "TEST.MESO-PLANETTE",

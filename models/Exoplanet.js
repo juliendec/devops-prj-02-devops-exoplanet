@@ -7,7 +7,7 @@ const exoplanetsTable = [
 module.exports.list = () => exoplanetsTable
 
 module.exports.save = (data) => {
-    if(/^[A-Z]+$/.test(data.uniqueName)){
+    if(/^[A-Z . \- 0-9]+$/.test(data.uniqueName)){
         exoplanetsTable.push(data);
         return true;
     }
