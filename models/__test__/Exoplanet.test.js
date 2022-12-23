@@ -32,3 +32,14 @@ describe("Test if planet name contains special chars - pass", () => {
         expect(result).toBe(true);
     });
 });
+
+describe("Test if planet name contains special chars - fail", () => {
+    it("should work - return false", () => {
+        const result = save({
+            uniqueName: "TRAPPISTE$****01****-00",
+            hClass: "Mésoplanète",
+            discoveryYear: 2022,
+        })
+        expect(result).toBe(false);
+    });
+});
