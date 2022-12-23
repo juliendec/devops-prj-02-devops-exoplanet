@@ -21,3 +21,14 @@ describe("tests add planets - save", () => {
         expect(result).toBe(false);
     });
 });
+
+describe("tests add planets - save", () => {
+    it("should work - return true", () => {
+        const result = save({
+            uniqueName: "test.Meso-planete",
+            hClass: "Mésoplanète",
+            discoveryYear: 2022,
+        })
+        expect(result).toBe(true);
+    });
+});
