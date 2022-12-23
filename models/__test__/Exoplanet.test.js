@@ -25,7 +25,7 @@ describe("tests add planets - save", () => {
 describe("tests add planets - save", () => {
     it("should work - return true", () => {
         const result = save({
-            uniqueName: "test.Meso-planete",
+            uniqueName: "TEST.MESO-PLANETTE",
             hClass: "Mésoplanète",
             discoveryYear: 2022,
         })
